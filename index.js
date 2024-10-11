@@ -394,7 +394,7 @@ class MudiExperience {
      referenceColors.forEach((item) => {
       colorOptionsHTML += `
        <button 
-         class="color-button" 
+         class="color-buttons" 
          value="${item.sku}"
          style="background-image: url(${item.textura}); background-size: cover; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; width: 40px; height: 40px; border-radius: 50%; flex: 0 0 40px;" 
          ${item.sku === skuNumber ? 'data-selected="true"' : ''}
@@ -414,7 +414,7 @@ class MudiExperience {
 
        sizeOptionsHTML += `
      <button 
-       class="size-button" 
+       class="size-buttons" 
        value="${item.sku}"
        style="font-size: 1rem; background-size: cover; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
      >
@@ -510,8 +510,8 @@ class MudiExperience {
             </div>
         `;
 
-    const colorButtons = modalMudi.querySelectorAll(".color-button");
-    const sizeButtons = modalMudi.querySelectorAll(".size-button");
+    const colorButtons = modalMudi.querySelectorAll(".color-buttons");
+    const sizeButtons = modalMudi.querySelectorAll(".size-buttons");
     const iframeMudi = modalMudi.querySelector(".modelMudi");
     const qrMudi = modalMudi.querySelector('.mudiQR');
 
