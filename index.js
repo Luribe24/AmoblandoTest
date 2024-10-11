@@ -45,7 +45,7 @@ class MudiExperience {
     const link = document.createElement("LINK");
     link.setAttribute("rel", "stylesheet");
     link.id = "stylesMudiGeneral";
-    link.href = `https://cdn.jsdelivr.net/gh/RodriguezJose92/amoblando@latest/index.css`; /* custom this path */
+    link.href = `https://cdn.jsdelivr.net/gh/Luribe24/AmoblandoTest@latest/index.css`; /* custom this path */
 
     document.head.appendChild(link);
   }
