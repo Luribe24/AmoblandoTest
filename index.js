@@ -416,7 +416,7 @@ class MudiExperience {
      <button 
        class="size-button" 
        value="${item.sku}"
-       style="font-size: 1rem; background-size: cover; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;border: ${item.sku === skuNumber ? '2px solid red' : 'none'} flex: 0 0 60px;  "
+       style="font-size: 1rem; background-size: cover; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
      >
      ${item.medida}
      </button>
@@ -512,7 +512,7 @@ class MudiExperience {
 
     const colorButtons = modalMudi.querySelectorAll(".color-button");
     const sizeButtons = modalMudi.querySelectorAll(".size-button");
-    const iframeMudi = modalMudi.querySelector("#iframeMudi");
+    const iframeMudi = modalMudi.querySelector(".modelMudi");
     const qrMudi = modalMudi.querySelector('.mudiQR');
 
 
