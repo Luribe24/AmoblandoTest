@@ -387,14 +387,14 @@ class MudiExperience {
     let flagAR = false;
 
      let colorOptionsHTML = `
-     <div id="colorSelect" class="color-button" style="display:${referenceColors.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 0.5rem; position: absolute; bottom: ${referenceColors.length > 0 ? '80px' : '33px'}; z-index: 1000;">
+     <div id="colorSelect" class="color-buttons" style="display:${referenceColors.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 0.5rem; position: absolute; bottom: ${referenceColors.length > 0 ? '80px' : '33px'}; z-index: 1000;">
    `;
 
      /** Se agregan los colores como botones donde el valor es el sku */
      referenceColors.forEach((item) => {
       colorOptionsHTML += `
        <button 
-         class="color-buttons" 
+         class="color-button" 
          value="${item.sku}"
          style="background-size: cover; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; width: 40px; height: 40px; border-radius: 50%; flex: 0 0 40px;" 
          ${item.sku === skuNumber ? 'data-selected="true"' : ''}
@@ -405,7 +405,7 @@ class MudiExperience {
      colorOptionsHTML += "</div>";
 
      let sizeOptionsHTML = `   
-   <div id="sizeSelect" class="size-button" style="style="display:${referenceSizes.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
+   <div id="sizeSelect" class="size-buttons" style="style="display:${referenceSizes.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
  `;
 
     /** Se agregan las medidas */
@@ -414,7 +414,7 @@ class MudiExperience {
 
        sizeOptionsHTML += `
      <button 
-       class="size-buttons" 
+       class="size-button" 
        value="${item.sku}"
        style="font-size: 1rem; background-size: cover; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
      >
