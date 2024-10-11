@@ -510,6 +510,42 @@ class MudiExperience {
             </div>
         `;
 
+    const colorButtons = modalMudi.querySelectorAll(".color-button");
+    const sizeButtons = modalMudi.querySelectorAll(".size-button");
+    const iframeMudi = modalMudi.querySelector("#iframeMudi");
+    const qrMudi = modalMudi.querySelector('.mudiQR');
+
+
+
+      /** Event listeners para el cambio de color */
+    colorButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const selectedSku = e.target.value;
+        iframeMudi.src = `https://viewer.mudi.com.co/v1/web/?id=147&sku=${selectedSku}`;
+        qrMudi.src = `https://viewer.mudi.com.co/v1/qr/?id=147&sku=${selectedSku}`;
+
+        // Actualizar apariencia de botones
+        colorButtons.forEach(btn => btn.style.border = 'none');
+        e.target.style.border = '2px solid red';
+      });
+    });
+
+    /** Event listeners para el cambio de tamaño */
+    sizeButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const selectedSku = e.target.value;
+        iframeMudi.src = `https://viewer.mudi.com.co/v1/web/?id=147&sku=${selectedSku}`;
+        qrMudi.src = `https://viewer.mudi.com.co/v1/qr/?id=147&sku=${selectedSku}`;
+
+        // Actualizar apariencia de botones
+        sizeButtons.forEach(btn => btn.style.border = 'none');
+        e.target.style.border = '2px solid red';
+      });
+    });
+
+
     /** We close the MUDI modal*/
     modalMudi.querySelector(`.closeModalMudi`).addEventListener("click", () => {
       document.body.querySelector("#modalMudi").remove();
