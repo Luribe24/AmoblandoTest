@@ -387,7 +387,7 @@ class MudiExperience {
     let flagAR = false;
 
      let colorOptionsHTML = `
-     <div id="colorSelect" class="color-buttons" style="display:${referenceColors.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 0.5rem; position: absolute; bottom: ${referenceColors.length > 0 ? '80px' : '33px'}; z-index: 1000;">
+     <div id="colorSelect" class="color-button" style="display:${referenceColors.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 0.5rem; position: absolute; bottom: ${referenceColors.length > 0 ? '80px' : '33px'}; z-index: 1000;">
    `;
 
      /** Se agregan los colores como botones donde el valor es el sku */
@@ -396,7 +396,7 @@ class MudiExperience {
        <button 
          class="color-buttons" 
          value="${item.sku}"
-         style="background-image: url(${item.textura}); background-size: cover; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; width: 40px; height: 40px; border-radius: 50%; flex: 0 0 40px;" 
+         style="background-size: cover; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; width: 40px; height: 40px; border-radius: 50%; flex: 0 0 40px;" 
          ${item.sku === skuNumber ? 'data-selected="true"' : ''}
        >
        </button>
@@ -405,7 +405,7 @@ class MudiExperience {
      colorOptionsHTML += "</div>";
 
      let sizeOptionsHTML = `   
-   <div id="sizeSelect" class="size-buttons" style="style="display:${referenceSizes.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
+   <div id="sizeSelect" class="size-button" style="style="display:${referenceSizes.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
  `;
 
     /** Se agregan las medidas */
@@ -510,8 +510,8 @@ class MudiExperience {
             </div>
         `;
 
-    const colorButtons = modalMudi.querySelectorAll(".color-buttons");
-    const sizeButtons = modalMudi.querySelectorAll(".size-buttons");
+    const colorButtons = modalMudi.querySelectorAll(".color-button");
+    const sizeButtons = modalMudi.querySelectorAll(".size-button");
     const iframeMudi = modalMudi.querySelector(".modelMudi");
     const qrMudi = modalMudi.querySelector('.mudiQR');
 
