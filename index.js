@@ -405,12 +405,12 @@ class MudiExperience {
     colorOptionsHTML += "</div>";
 
     let sizeOptionsHTML = `   
-   <div id="sizeSelect" class="size-buttons" style= "display:'flex'; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
+   <div id="sizeSelect" class="size-buttons" style= "display: flex; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
  `;
 
     /** Se agregan las medidas */
     referenceSizes.forEach((item) => {
-      console.log(item.sku);
+     
 
       sizeOptionsHTML += `
      <button 
@@ -421,6 +421,7 @@ class MudiExperience {
     ${item.medida.split('|')[1].trim()}
    </button>
       `;
+      console.log(item.sku);
     });
     sizeOptionsHTML += "</div>";
 
