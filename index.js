@@ -103,8 +103,8 @@ class MudiExperience {
       let colorsMudi = referenceColorMudi ? JSON.parse(referenceColorMudi.value) : [];
       console.log("Entrando");
 
-      this.createModal( this.skuNumber,colorsMudi, sizeMudi );
-     
+      this.createModal(this.skuNumber, colorsMudi, sizeMudi);
+
 
       /** GTM */
       this.sendEventInteraction("3D");
@@ -147,13 +147,13 @@ class MudiExperience {
       console.log(item.sku);
 
       sizeOptionsHTML += `
-        <button 
-          class="size-button" 
-          value="${item.sku}"
-          style="font-size: 1rem; background-size: cover; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; flex: 0 0 60px;  "
-        >
-        ${item.medida}
-        </button>
+      <button 
+      class="size-button" 
+      value="${item.sku}"
+      style="font-size: 1.5rem; background-color: #dadada; background-size: cover; width: 60px; height: 60px; border-radius: 15%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
+   >
+    ${item.medida.split('|')[1].trim()}
+   </button>
       `;
     });
     sizeOptionsHTML += "</div>";
@@ -379,20 +379,19 @@ class MudiExperience {
 
     document.body.appendChild(modalMudi);
   }
-
   /** Create Modal ✔️ */
-  createModal( skuNumber,referenceColors, referenceSizes) {
-   console.log(skuNumber)
+  createModal(skuNumber, referenceColors, referenceSizes) {
+    console.log(skuNumber)
     /** create variables */
     let flagAR = false;
 
-     let colorOptionsHTML = `
+    let colorOptionsHTML = `
      <div id="colorSelect" class="color-buttons" style="display:${referenceColors.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 0.5rem; position: absolute; bottom: ${referenceColors.length > 0 ? '80px' : '33px'}; z-index: 1000;">
    `;
 
-     /** Se agregan los colores como botones donde el valor es el sku */
-     referenceColors.forEach((item) => {
-       console.log(item.textura)
+    /** Se agregan los colores como botones donde el valor es el sku */
+    referenceColors.forEach((item) => {
+      console.log(item.textura)
       colorOptionsHTML += `
        <button 
          class="color-button" 
@@ -402,28 +401,28 @@ class MudiExperience {
        >
        </button>
      `;
-     });
-     colorOptionsHTML += "</div>";
+    });
+    colorOptionsHTML += "</div>";
 
-     let sizeOptionsHTML = `   
-   <div id="sizeSelect" class="size-buttons" style="style="display:${referenceSizes.length > 0 ? 'flex' : 'none'}; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
+    let sizeOptionsHTML = `   
+   <div id="sizeSelect" class="size-buttons" style= "display:'flex'; align-items: center; gap: 1.5rem; position: absolute; bottom:5px; z-index: 1000;">
  `;
 
     /** Se agregan las medidas */
-     referenceSizes.forEach((item) => {
-       console.log(item.sku);
+    referenceSizes.forEach((item) => {
+      console.log(item.sku);
 
-       sizeOptionsHTML += `
+      sizeOptionsHTML += `
      <button 
        class="size-button" 
        value="${item.sku}"
-       style="font-size: 1rem; background-size: cover; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
+       style="font-size: 1.5rem; background-color: #dadada; background-size: cover; width: 60px; height: 60px; border-radius: 15%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
      >
-     ${item.medida}
+      ${item.medida.split('|')[1].trim()}
      </button>
    `;
-     });
-     sizeOptionsHTML += "</div>";
+    });
+    sizeOptionsHTML += "</div>";
 
     /** We create a shell for the MUDI modal */
     const modalMudi = document.createElement("DIV");
@@ -518,7 +517,7 @@ class MudiExperience {
 
 
 
-      /** Event listeners para el cambio de color */
+    /** Event listeners para el cambio de color */
     colorButtons.forEach(button => {
       button.addEventListener("click", (e) => {
         e.stopPropagation();
