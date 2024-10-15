@@ -150,7 +150,7 @@ class MudiExperience {
       <button 
       class="size-button" 
       value="${item.sku}"
-      style="font-size: 1.5rem; background-color: #dadada; background-size: cover; width: 60px; height: 60px; border-radius: 15%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
+      style="font-size: 1.2rem; background-color: #dadada; background-size: cover; width: 60px; height: 60px; border-radius: 15%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
    >
     ${item.medida.split('|')[1].trim()}
    </button>
@@ -414,13 +414,13 @@ class MudiExperience {
 
       sizeOptionsHTML += `
      <button 
-       class="size-button" 
-       value="${item.sku}"
-       style="font-size: 1.5rem; background-color: #dadada; background-size: cover; width: 60px; height: 60px; border-radius: 15%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
-     >
-      ${item.medida.split('|')[1].trim()}
-     </button>
-   `;
+      class="size-button" 
+      value="${item.sku}"
+      style="font-size: 1.2rem; background-color: #dadada; background-size: cover; width: 60px; height: 60px; border-radius: 15%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
+   >
+    ${item.medida.split('|')[1].trim()}
+   </button>
+      `;
     });
     sizeOptionsHTML += "</div>";
 
