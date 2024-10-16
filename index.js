@@ -1,3 +1,4 @@
+
 /** Mudi Experience */
 class MudiExperience {
   constructor() {
@@ -133,6 +134,7 @@ class MudiExperience {
         >
         </button>
       `;
+      console.log("SkuRefMudi "+item.sku+" skuNumber "+skuNumber) ;
     });
     colorOptionsHTML += "</div>";
 
@@ -144,17 +146,17 @@ class MudiExperience {
 
     /** Se agregan las medidas */
     referenceSizes.forEach((item) => {
-      console.log(item.sku);
-
       sizeOptionsHTML += `
       <button 
       class="size-button" 
       value="${item.sku}"
       style="font-size: 1.2rem; background-color: #dadada; background-size: cover; width: 60px; height: 60px; border-radius: 15%; display: flex; align-items: center; justify-content: center; border: ${item.sku === skuNumber ? '2px solid red' : 'none'}; flex: 0 0 60px;  "
-   >
+      ${item.sku === skuNumber ? 'data-selected="true"' : ''}
+    >
     ${item.medida.split('|')[1].trim()}
    </button>
       `;
+      console.log("SkuRefMudi "+item.sku+" skuNumber "+skuNumber) ;
     });
     sizeOptionsHTML += "</div>";
 
@@ -391,7 +393,6 @@ class MudiExperience {
 
     /** Se agregan los colores como botones donde el valor es el sku */
     referenceColors.forEach((item) => {
-      console.log(item.textura)
       colorOptionsHTML += `
        <button 
          class="color-button" 
@@ -401,6 +402,7 @@ class MudiExperience {
        >
        </button>
      `;
+     console.log("SkuRefMudi "+item.sku+" skuNumber "+skuNumber) ;
     });
     colorOptionsHTML += "</div>";
 
@@ -421,7 +423,7 @@ class MudiExperience {
     ${item.medida.split('|')[1].trim()}
    </button>
       `;
-      console.log(item.sku);
+      console.log("SkuRefMudi "+item.sku+" skuNumber "+skuNumber) ;
     });
     sizeOptionsHTML += "</div>";
 
@@ -696,9 +698,7 @@ setTimeout(() => {
       let colorsMudi = inputColorMudi ? JSON.parse(inputColorMudi.value) : [];
       let sizesMudi = inputSizeMudi ? JSON.parse(inputSizeMudi.value) : [];
       let combinationsMudi = inputCombinationsMudi ? JSON.parse(inputCombinationsMudi.value) : [];
-
-      console.log(combinationsMudi);
-
+      
       mudiExperience.createStyles();
       mudiExperience.createModalPLP(
         e.target.attributes.sku.value,
@@ -710,3 +710,6 @@ setTimeout(() => {
     });
   });
 }, 2000);
+
+
+
